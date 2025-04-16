@@ -163,16 +163,16 @@ export default function Home() {
   return (
     
       
-        {alerts.length > 0 && 
-          <>
+        {alerts.length > 0 ? (
+          
             {alerts.map((alert, index) => (
               
                 <AlertTitle>Alert!</AlertTitle>
                 <AlertDescription>{alert}</AlertDescription>
               
             ))}
-          </>
-        }
+          
+        ) : null}
         {apiKey ? (
           <LoadScript googleMapsApiKey={apiKey}>
             <GoogleMap
@@ -232,5 +232,3 @@ export default function Home() {
     
   );
 }
-
-
